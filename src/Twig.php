@@ -14,7 +14,6 @@ use ArrayAccess;
 use ArrayIterator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use ReturnTypeWillChange;
 use RuntimeException;
 use Throwable;
 use Twig\Environment;
@@ -251,8 +250,7 @@ class Twig implements ArrayAccess
      *
      * @return mixed The key's value, or the default value
      */
-    #[ReturnTypeWillChange]
-    public function offsetGet($key)
+    public function offsetGet($key): mixed
     {
         if (!$this->offsetExists($key)) {
             return null;
