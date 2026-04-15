@@ -238,7 +238,7 @@ class Twig implements ArrayAccess
      *
      * @return bool
      */
-    public function offsetExists($key): bool
+    public function offsetExists(mixed $key): bool
     {
         return array_key_exists($key, $this->defaultVariables);
     }
@@ -250,7 +250,7 @@ class Twig implements ArrayAccess
      *
      * @return mixed The key's value, or the default value
      */
-    public function offsetGet($key): mixed
+    public function offsetGet(mixed $key): mixed
     {
         if (!$this->offsetExists($key)) {
             return null;
@@ -264,7 +264,7 @@ class Twig implements ArrayAccess
      * @param string $key The data key
      * @param mixed $value The data value
      */
-    public function offsetSet($key, $value): void
+    public function offsetSet(mixed $key, mixed $value): void
     {
         $this->defaultVariables[$key] = $value;
     }
@@ -274,7 +274,7 @@ class Twig implements ArrayAccess
      *
      * @param string $key The data key
      */
-    public function offsetUnset($key): void
+    public function offsetUnset(mixed $key): void
     {
         unset($this->defaultVariables[$key]);
     }
